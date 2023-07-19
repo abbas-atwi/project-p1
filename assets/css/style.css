@@ -278,9 +278,14 @@ header {
   .section-slider-box .section-slider-title {
     /* background-color: red; */
     font-size: 1.8rem;
+    padding-bottom: 20px;
   }
   .section-slider-box p {
     /* background-color: yellow; */
     font-size: 1.1rem;
+  }
+  .arrows {
+    padding: 0px 8px;
+    /* background-color: red; */
   }
 }
