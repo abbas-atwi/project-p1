@@ -244,9 +244,11 @@ header {
     height: 100vh;
     z-index: 9999999;
     display: flex;
+    display: none;
     background-color: rgba(0, 0, 0, 0.9);
   }
   .menu nav.active {
+    display: flex;
     animation: showMenu 0.3s forwards ease-in;
   }
   .menu nav.desactive {
