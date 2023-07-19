@@ -217,6 +217,7 @@ header {
   flex-direction: column;
   justify-content: space-around;
   background-color: red;
+  display: none;
 }
 .burguer {
   width: 100%;
@@ -232,6 +233,9 @@ header {
     width: 100%;
     justify-content: center;
     /* background-color: yellow; */
+  }
+  .menuBurguer {
+    display: flex;
   }
   .menu nav {
     position: absolute;
