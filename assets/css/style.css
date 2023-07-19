@@ -252,6 +252,7 @@ header {
     animation: showMenu 0.3s forwards ease-in;
   }
   .menu nav.desactive {
+    display: flexs;
     animation: showMenuDesactive 0.3s forwards ease-in;
   }
   .menu {
@@ -271,7 +272,15 @@ header {
   }
   .menu li a {
     font-size: 2rem;
-
     /* background-color: yellow; */
+  }
+
+  .section-slider-box .section-slider-title {
+    /* background-color: red; */
+    font-size: 1.8rem;
+  }
+  .section-slider-box p {
+    /* background-color: yellow; */
+    font-size: 1.1rem;
   }
 }
