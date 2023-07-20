@@ -136,13 +136,14 @@ header {
 }
 .section-sliders-body {
   background-color: yellow;
-  /* overflow-x: hidden; */
+  overflow: hidden;
 }
 .section-sliders {
   width: 1000vw;
   background-color: blue;
   height: 100%;
   display: flex;
+  /* overflow-x: hidden; */
 }
 .section-sliders.active {
   transition: all 0.3s ease-in;
