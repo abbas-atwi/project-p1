@@ -78,6 +78,7 @@ header {
 }
 .menu li a::after {
   content: "";
+
   height: 2px;
   border-radius: 50px;
   background-color: rgb(35, 222, 35);
@@ -224,6 +225,61 @@ header {
   height: 3px;
   background-color: #fff;
 }
+
+.section-content {
+  /* width: 100%; */
+
+  /* background-color: red; */
+}
+.section-content-container {
+  padding: 20px 15px;
+  max-width: 980px;
+  margin: auto;
+  display: flex;
+
+  gap: 5px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@keyframes showSectionBox {
+  from {
+    opacity: 0;
+    transform: translate3d(-30px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes showSectionBoxEven {
+  from {
+    opacity: 0;
+    /* transform: translate3d(0, 0, 600px); */
+    transform: translateX(70px);
+  }
+  to {
+    opacity: 1;
+    /* transform: translate3d(0, 0, 0); */
+    transform: translateX(0px);
+  }
+}
+.section-box-content {
+  flex: 1;
+  height: 250px;
+  opacity: 0;
+  background-color: #222;
+  border-radius: 6px;
+}
+.section-box-content:nth-child(odd).active {
+  background-color: #222;
+  animation: showSectionBox 0.3s forwards;
+}
+.section-box-content:nth-child(even).active {
+  background-color: #393939;
+  animation: showSectionBoxEven 0.7s forwards;
+}
+
 @media (max-width: 600px) {
   .header-container {
     padding: 10px;
@@ -287,5 +343,14 @@ header {
   .arrows {
     padding: 0px 8px;
     /* background-color: red; */
+  }
+
+  .section-content-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .section-box-content {
+    width: 300px;
+    min-height: 200px;
   }
 }
