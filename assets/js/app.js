@@ -16,7 +16,6 @@ menuArray.map((item) => {
     item.classList.add("active");
   });
 });
-
 // selecionar os pointers
 const pointers = document.querySelectorAll(
   ".section-sliders-pointers .section-pointer"
@@ -75,18 +74,26 @@ window.addEventListener("resize", () => {});
 console.log(arrows);
 
 const menuClick = document.querySelector(".menuBurguer");
+const menuClickAnimation = document.querySelectorAll(".burguer");
 const navMenu = document.querySelector(".menu nav");
 menuClick.addEventListener("click", () => {
   if (!navMenu.classList.contains("active")) {
     navMenu.classList.remove("desactive");
     navMenu.classList.add("active");
+    menuClick.classList.add("active");
+    menuClickAnimation.forEach((item) => {
+      item.classList.add("active");
+    });
   } else {
     navMenu.classList.remove("active");
     navMenu.classList.add("desactive");
+    menuClick.classList.remove("active");
+    menuClickAnimation.forEach((item) => {
+      item.classList.remove("active");
+    });
   }
   console.log();
 });
-
 // selecionar os boxes
 const boxSectionContainer = document.querySelector(
   ".section-content-container"
@@ -94,14 +101,23 @@ const boxSectionContainer = document.querySelector(
 const boxSection = document.querySelectorAll(".section-box-content");
 console.log(boxSection);
 boxSection[0].classList.add("active");
-const timerBox = [1000, 1200, 1400, 1600];
-window.addEventListener("scroll", (e) => {
-  const top = boxSectionContainer.getBoundingClientRect().top < 0;
-  if (top) {
-    boxSection.forEach((item, id) => {
-      setTimeout(() => {
-        item.classList.add("active");
-      }, timerBox[id]);
-    });
-  }
-});
+const timerBox = [300, 700, 900, 1000];
+
+if (browser) {
+  window.addEventListener("scroll", (e) => {
+    const top = boxSectionContainer.getBoundingClientRect().top < 0;
+    if (top && browser) {
+      boxSection.forEach((item, id) => {
+        setTimeout(() => {
+          item.classList.add("active");
+        }, timerBox[id]);
+      });
+    }
+  });
+} else {
+  boxSection.forEach((item, id) => {
+    setTimeout(() => {
+      item.classList.add("active");
+    }, timerBox[id]);
+  });
+}

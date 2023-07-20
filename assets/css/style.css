@@ -78,7 +78,8 @@ header {
 }
 .menu li a::after {
   content: "";
-
+  opacity: 0;
+  width: 100%;
   height: 2px;
   border-radius: 50px;
   background-color: rgb(35, 222, 35);
@@ -87,7 +88,8 @@ header {
   animation: showMenu 0.3s forwards ease-in;
 } */
 .menu li a.active:after {
-  animation: showMenu 0.3s forwards ease-in;
+  opacity: 1;
+  animation: showMenu 0.3s forwards;
 }
 
 .section-sliders-body {
@@ -96,15 +98,14 @@ header {
 }
 .arrows {
   position: relative;
-  z-index: 999;
+  z-index: 9999;
   background-color: transparent;
-  margin-top: -300px;
+  margin-top: -290px;
   height: inherit;
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  padding: 0px 30px;
+  padding: 0px 15px;
 }
 
 .arrows .arrow {
@@ -135,7 +136,7 @@ header {
 }
 .section-sliders-body {
   background-color: yellow;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 .section-sliders {
   width: 1000vw;
@@ -212,20 +213,39 @@ header {
 .menuBurguer {
   width: 50px;
   height: 45px;
-  border-radius: 15px;
+  border-radius: 25px;
   display: flex;
   overflow: hidden;
   flex-direction: column;
   justify-content: space-around;
-  background-color: red;
+  /* background-color: red; */
   display: none;
+  cursor: pointer;
 }
 .burguer {
+  /* transform: rotate(deg); */
   width: 100%;
   height: 3px;
   background-color: #fff;
 }
-
+.menuBurguer.active {
+  height: 20px;
+  transition: 2s;
+  /* background-color: red; */
+}
+.burguer:nth-child(2).active {
+  display: none;
+}
+.burguer:nth-child(1).active {
+  /* background-color: red; */
+  transform: rotate(60deg);
+  transition: 1s;
+}
+.burguer:nth-child(3).active {
+  /* background-color: yellow; */
+  transform: rotate(-60deg);
+  transition: 1s;
+}
 .section-content {
   /* width: 100%; */
 
@@ -296,7 +316,7 @@ header {
   .menu nav {
     position: absolute;
     top: 100px;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     z-index: 9999999;
     display: flex;
@@ -308,7 +328,7 @@ header {
     animation: showMenu 0.3s forwards ease-in;
   }
   .menu nav.desactive {
-    display: flexs;
+    display: flex;
     animation: showMenuDesactive 0.3s forwards ease-in;
   }
   .menu {
