@@ -100,7 +100,7 @@ header {
   position: relative;
   z-index: 9999;
   background-color: transparent;
-  margin-top: -290px;
+  margin-top: -300px;
   height: inherit;
   display: flex;
   justify-content: space-between;
