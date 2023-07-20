@@ -119,3 +119,39 @@ if (browser) {
     }, timerBox[id]);
   });
 }
+const menuHref = document.querySelectorAll(".menu a[href^='#']");
+console.log(menuHref);
+
+menuHref.forEach((link) => {
+  link.addEventListener("click", (e) => {
+    e.preventDefault();
+    const href = link.getAttribute("href");
+    const sections = document.querySelector(href);
+    const top = sections.getBoundingClientRect().top;
+
+    window.scrollTo({
+      top,
+      behavior: "smooth",
+    });
+    console.log(sections);
+  });
+});
+
+const obj = {
+  color: "red",
+};
+Object.defineProperties(obj, {
+  color: {
+    configurable: false,
+    writable: false,
+    enumerable: false,
+  },
+});
+
+// Object.freeze(obj); // congela o meu objeto e nao adiciona
+// Object.seal(obj);
+obj.color = "blue";
+const objEntries = Object.entries(obj);
+// obj.tamanho = 500;
+console.log(obj);
+console.log(`obj Entries: ${objEntries}`);
