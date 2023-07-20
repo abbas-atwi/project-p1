@@ -4,7 +4,7 @@ const menu = document.querySelectorAll(".menu a");
 // o nodelist em array
 const menuArray = Array.from(menu);
 
-function removeClass(elements) {
+function removeClass() {
   menuArray.forEach((item) => {
     item.classList.remove("active");
   });
@@ -85,4 +85,23 @@ menuClick.addEventListener("click", () => {
     navMenu.classList.add("desactive");
   }
   console.log();
+});
+
+// selecionar os boxes
+const boxSectionContainer = document.querySelector(
+  ".section-content-container"
+);
+const boxSection = document.querySelectorAll(".section-box-content");
+console.log(boxSection);
+boxSection[0].classList.add("active");
+const timerBox = [1000, 1200, 1400, 1600];
+window.addEventListener("scroll", (e) => {
+  const top = boxSectionContainer.getBoundingClientRect().top < 0;
+  if (top) {
+    boxSection.forEach((item, id) => {
+      setTimeout(() => {
+        item.classList.add("active");
+      }, timerBox[id]);
+    });
+  }
 });
