@@ -33,7 +33,6 @@ function removeClasspointers(id) {
   });
   slide.style.marginLeft = sliders[id];
 }
-
 function slidermove() {
   pointers.forEach((item, id) => {
     item.addEventListener("click", () => {
