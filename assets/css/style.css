@@ -208,6 +208,30 @@ header {
   overflow-x: hidden;
 } */
 
+.section-default {
+  padding: 20px 0px;
+  background-color: #393939;
+}
+.section-aboutus {
+  max-width: 980px;
+  margin: auto;
+}
+.section-aboutus h1 {
+  font-size: 1.3rem;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0px;
+}
+.section-description {
+  text-align: center;
+  background-color: #222;
+  padding: 20px 0px;
+  border: 1px dashed #fff;
+  color: #fff;
+}
+.section-description p {
+  font-size: 1.6rem;
+}
 @keyframes showMenu {
   from {
     margin-right: -1000px;
@@ -386,5 +410,13 @@ header {
   .section-box-content {
     width: 300px;
     min-height: 200px;
+  }
+  .section-description {
+    display: flex;
+    justify-content: center;
+  }
+  .section-description p {
+    font-size: 1rem;
+    max-width: 200px;
   }
 }
