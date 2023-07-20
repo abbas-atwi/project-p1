@@ -158,7 +158,12 @@ header {
   align-items: center;
   color: #fff;
 }
-
+.section-slider-box:nth-child(odd) {
+  background: url(../images/banner-1-1jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
 .section-slider-box .section-slider-title {
   font-size: 2.6rem;
   padding: 10px 0px;
