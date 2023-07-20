@@ -101,18 +101,17 @@ const boxSectionContainer = document.querySelector(
 const boxSection = document.querySelectorAll(".section-box-content");
 console.log(boxSection);
 boxSection[0].classList.add("active");
-const timerBox = [300, 700, 900, 1000];
-
+const timerBox = [300, 400, 500, 600];
+const heightInner = window.innerHeight * 0.8;
 if (browser) {
   window.addEventListener("scroll", (e) => {
-    const top = boxSectionContainer.getBoundingClientRect().top < 0;
-    if (top && browser) {
-      boxSection.forEach((item, id) => {
-        setTimeout(() => {
-          item.classList.add("active");
-        }, timerBox[id]);
-      });
-    }
+    const top = boxSectionContainer.getBoundingClientRect().top;
+    boxSection.forEach((item) => {
+      const top = item.getBoundingClientRect().top - heightInner;
+      if (top < 0) {
+        item.classList.add("active");
+      }
+    });
   });
 } else {
   boxSection.forEach((item, id) => {
